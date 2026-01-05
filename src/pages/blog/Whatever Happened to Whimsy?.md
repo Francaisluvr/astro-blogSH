@@ -46,4 +46,9 @@ Especially now.
 So if you’ve been wondering whatever happened to whimsy, consider this your reminder.
 It’s still here.
 It’s still yours.
-And it’s waiting for you to pick up your scissors, find that pattern, try that new craft you've been eyeing and sparkle again.
+And it’s waiting for you to pick up your scissors, find that pattern, try that new craft you've been eyeing and be your weird, wonderful, unique self again.
+If this stirred something in you, that’s not an accident.
+Southpaw Handmade was created for makers who need encouragement, want to explore curiosity, and creating just for the joy of it. Our sewing patterns and fabric patterns are made to be practical enough for everyday life and playful enough to feel like you again.
+No pressure. No rush. Just an open invitation.
+Browse a pattern. Daydream over fabric. Save an idea for later. Whimsy doesn’t demand commitment. It just asks you to show up when you’re ready. You never need to be perfect to play. Whether it's your first or 100th time, you've got this.
+When you are, we’ll be right here, cheering you on, one magical make at a time.

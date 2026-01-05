@@ -441,46 +441,63 @@
         </div>
     </footer>
 
-    <script>
-        // Pinterest Pin Function
-        function pinIt(section) {
-            const url = window.location.href;
-            let description = '';
-            let title = '';
-            
-            switch(section) {
-                case 'patterns':
-                    title = 'Whimsical Sewing Patterns | Southpaw Handmade';
-                    description = 'Beginner-friendly sewing patterns that celebrate creativity and whimsy. You don\'t need permission to play.';
-                    break;
-                case 'fabric':
-                    title = 'Original Surface Pattern Designs | Southpaw Handmade';
-                    description = 'Unique fabric designs that tell stories. Shop our collections on Spoonflower.';
-                    break;
-                case 'blog':
-                    title = 'Creative Sewing Tutorials & Inspiration | Southpaw Handmade';
-                    description = 'Tutorials, tips, and stories for makers who believe imagination isn\'t optional.';
-                    break;
-            }
-            
-            const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(description)}&media=${encodeURIComponent('https://example.com/pinterest-image.jpg')}`;
-            
-            window.open(pinterestUrl, '_blank', 'width=750,height=550');
-        }
+    <script is:inline>
+  function pinIt(section: string) {
+    const url = window.location.href;
+    let description = '';
+    let title = '';
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    switch (section) {
+      case 'patterns':
+        title = 'Whimsical Sewing Patterns | Southpaw Handmade';
+        description =
+          "Beginner-friendly sewing patterns that celebrate creativity and whimsy. You don't need permission to play.";
+        break;
+
+      case 'fabric':
+        title = 'Original Surface Pattern Designs | Southpaw Handmade';
+        description =
+          'Unique fabric designs that tell stories. Shop our collections on Spoonflower.';
+        break;
+
+      case 'blog':
+        title = 'Creative Sewing Tutorials & Inspiration | Southpaw Handmade';
+        description =
+          "Tutorials, tips, and stories for makers who believe imagination isn't optional.";
+        break;
+    }
+
+    const pinterestUrl =
+      'https://pinterest.com/pin/create/button/?' +
+      'url=' + encodeURIComponent(url) +
+      '&description=' + encodeURIComponent(description) +
+      '&media=' +
+      encodeURIComponent('https://example.com/pinterest-image.jpg');
+
+    window.open(pinterestUrl, '_blank', 'width=750,height=550');
+  }
+
+  // Make pinIt usable by buttons/links
+  (window as any).pinIt = pinIt;
+
+  // Smooth scrolling (Astro-safe)
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const targetSelector = anchor.getAttribute('href');
+      if (!targetSelector) return;
+
+      const target = document.querySelector<HTMLElement>(targetSelector);
+      if (!target) return;
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
