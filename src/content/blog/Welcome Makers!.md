@@ -1,5 +1,5 @@
 ---
-title: "Welcome to My Handmade Blog"
+title: "Welcome Makers!"
 pubDate: 2026-01-04
 description: "Sharing sewing tips, encouragement, and handmade inspiration"
 heroImage: "src/assets/logos/SHLogo2.jpg"
